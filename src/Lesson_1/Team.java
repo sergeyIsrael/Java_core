@@ -2,10 +2,11 @@ package Lesson_1;
 
 import java.util.Arrays;
 
+// КОМАНДА
 public class Team {
+    public int TEAM_SIZE = 4; // кол-во игроков в команде
     private final String nameTeam;
-    public int TEAM_SIZE = 4;
-    private final Player[] players;
+    private final Player[] players; // Массив игроков
 
 
     public Team(String nameTeam,
@@ -16,7 +17,6 @@ public class Team {
 
         this.nameTeam = nameTeam;
         this.players = new Player[TEAM_SIZE];
-
 
         this.players[0] = new Player(namePlayer1, playerMaxLimit1);
         this.players[1] = new Player(namePlayer2, playerMaxLimit2);
@@ -32,10 +32,22 @@ public class Team {
         return players;
     }
 
-
+// Инфа
     public String infoTeam() {
         return " Команда " + nameTeam + ", игроки: " + Arrays.toString(players);
     }
+
+    // Результат
+    public void showResults() {
+        for (Player teamPlayer : players) {
+            if (teamPlayer.isResult() == true) {
+                System.out.println(teamPlayer.getName() + " ✅ Прошёл дистанцию!🤩 ");
+            } else {
+                System.out.println(teamPlayer.getName() + " 💢 НЕ смог пройти дистанцию. ");
+            }
+        }
+    }
+
 
 
 }

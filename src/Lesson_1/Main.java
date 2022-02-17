@@ -6,13 +6,17 @@ public class Main {
 
 
 Team team1 = new Team("Орлы",
-        "Maksim", 50,
-        "Slava", 50,
-        "Alex", 50,
-        "Serg", 50
+        "Maksim", 1000,
+        "Slava", 1000,
+        "Alex", 600,
+        "Serg", 1000
         );
 
+Course course1 = new Course(999);
+
         System.out.println(team1.infoTeam());
+        course1.doIt(team1);
+        team1.showResults();
 
     }
 }
