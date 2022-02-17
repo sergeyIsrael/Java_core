@@ -21,17 +21,6 @@ public class Course {
     }
 
 //    забег v2
-    //    public void run(Player teamPlayer) {
-//        if (runDistance <= teamPlayer.getRunLimit()) {
-//            teamPlayer.setResult(true);
-//            System.out.println( teamPlayer.getName() + " Прошёл дистанцию!🤩 ");
-//        } else {
-//            teamPlayer.setResult(false);
-//            System.out.println(teamPlayer.getName() + " НЕ смог пройти дистанцию. ");
-//        }
-//    }
-
-//    забег v3
 //    public void run(Player teamPlayer) {
 //        boolean result = false;
 //        String message = "НЕ смог пройти дистанцию.";
@@ -42,8 +31,6 @@ public class Course {
 //        teamPlayer.setResult(result);
 //        System.out.println(teamPlayer.getName() + " " + message );
 //    }
-
-
 
 
 //    DO IT - пройти все препядствия (пока только одно)

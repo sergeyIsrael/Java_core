@@ -12,7 +12,7 @@ Team team1 = new Team("Орлы",
         "Serg", 1000
         );
 
-Course course1 = new Course(999);
+Course course1 = new Course(800);
 
         System.out.println(team1.infoTeam());
         course1.doIt(team1);
