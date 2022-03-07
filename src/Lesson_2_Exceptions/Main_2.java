@@ -42,7 +42,7 @@ public class Main_2 {
                 }
             }
         }
-        return  summ;
+        return summ;
     }
 
 
@@ -71,7 +71,7 @@ public class Main_2 {
                 {"5", "5", "4", "4"}};
 
 
-//        ЛОВИМ ИСКЛЮЧЕНИЯ раз
+//        ЛОВИМ ИСКЛЮЧЕНИЯ (полёт нормальный)
         System.out.println("ЛОВИМ ИСКЛЮЧЕНИЯ раз");
             try {
                 System.out.println( methodArray44(array4x4Good) );
