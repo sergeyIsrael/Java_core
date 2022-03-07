@@ -1,4 +1,6 @@
 package Lesson_3_Generic_task_2;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 // Задача:
 //Даны классы Fruit, Apple extends Fruit, Orange extends Fruit;
@@ -74,6 +76,7 @@ public class Box<T> {
     public void moveFruits (Box<T> otherBox) {
         otherBox.getFruitList().addAll(getFruitList());
         this.getFruitList().clear();
+        System.out.println("Пересыпали эту коробку в другую коробку.");
     }
 
     public ArrayList<T> getFruitList() {

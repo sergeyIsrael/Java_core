@@ -79,8 +79,6 @@ orangesList3.add(orange4);
 
 // - - - - - - ВЫПОЛНЯЕМ - - - - - -//
 
-        //        вес коробки
-
 //        смотрим вес
         appleBox1.showWeight();
         System.out.println(applesList1.size());
