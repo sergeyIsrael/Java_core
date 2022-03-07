@@ -96,6 +96,22 @@ orangesList3.add(orange4);
         System.out.println();
 
 //      сравниваем
+        System.out.println("Сравниваем appleBox1 и orangeBox1 👇");
         appleBox1.comparePrint(orangeBox1);
+        System.out.println("- - - - - - - - - - -");
+
+//        смотрим вес уже апельсинов
+        orangeBox3.showWeight();
+        System.out.println(orangesList3.size());
+        orangeBox2.showWeight();
+        System.out.println(orangesList2.size());
+//        пересыпаем и снова смотрим
+        orangeBox3.moveFruits(orangeBox2);
+
+        orangeBox3.showWeight();
+        System.out.println(orangesList3.size());
+        orangeBox2.showWeight();
+        System.out.println(orangesList2.size());
+
     }
 }

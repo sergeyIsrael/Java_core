@@ -44,8 +44,6 @@ public class Box<T> {
             for (int i = 0; i < fruitList.size(); i++) {
                 weightBox = weightBox + i;
             }
-        } else {
-//            System.out.println("Коробка пуста!!!");
         }
         return weightBox;
     }
