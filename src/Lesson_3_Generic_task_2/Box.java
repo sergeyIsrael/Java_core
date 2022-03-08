@@ -22,8 +22,7 @@ import java.util.ArrayList;
 // Соответственно, в текущей коробке фруктов не остается, а в другую перекидываются объекты, которые были в первой;
 
 
-public class Box<T> {
-
+public class Box<T extends Fruit> {
     //    кладем все яблоки в ArrayList.
    private ArrayList<T> fruitList;
 
@@ -31,35 +30,35 @@ public class Box<T> {
         this.fruitList = fruitList;
     }
 
-
-
-    //     высчитывает вес коробки, зная вес одного фрукта и их количество
-    public T getWeight() {
-        T weightBox = 0;
-        if (fruitList.size() != 0) {
-            for (T fruit : getFruitList() ) {
-                weightBox += getFruitList(fruit);
-            }
+    //     высчитывает вес коробки, зная вес одного фрукта и их количество КАК ЭТО РАБОТАЕТ❓❓❓
+    public double getWeightBox() {
+        double weightBox = 0;
+        for (T fruit : getFruitList()) {
+            if (fruit != null) {
+//                код ниже берёт каждый фрукт не из листа в коробке, а из класса Фрукт.
+                double value = fruit.getWeightFruit();
+                weightBox = weightBox + value;
+             }
         }
         return weightBox;
     }
 
     public void showWeight(){
-         if ( getWeight() == 0 ) {
+         if ( getWeightBox() == 0 ) {
             System.out.println("Коробка пуста 👀");
         } else {
-            System.out.println("Вес коробки - " + getWeight() + " кг.");
+            System.out.format("Вес коробки %.2f кг. %n", getWeightBox());
         }
     }
 
 
     //сравниваем коробки
     public boolean compareBool (Box<T> box) {
-        return (this.getWeight() - box.getWeight()) == 0;
+        return (this.getWeightBox() - box.getWeightBox()) == 0;
     }
 
     public void comparePrint (Box<?> box) {
-        if ((this.getWeight() - box.getWeight()) != 0) {
+        if ((this.getWeightBox() - box.getWeightBox()) != 0) {
             System.out.println("Вес Коробок разный");
         } else {
             System.out.println("Вес Коробок одинаковый 🙌");
