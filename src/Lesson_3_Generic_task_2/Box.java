@@ -1,5 +1,4 @@
 package Lesson_3_Generic_task_2;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 // Задача:
@@ -23,13 +22,10 @@ import java.util.ArrayList;
 // Соответственно, в текущей коробке фруктов не остается, а в другую перекидываются объекты, которые были в первой;
 
 
-
-
-
 public class Box<T> {
 
     //    кладем все яблоки в ArrayList.
-    ArrayList<T> fruitList;
+   private ArrayList<T> fruitList;
 
     public Box(ArrayList<T> fruitList) {
         this.fruitList = fruitList;
@@ -38,18 +34,18 @@ public class Box<T> {
 
 
     //     высчитывает вес коробки, зная вес одного фрукта и их количество
-    public double getWeight() {
-        double weightBox = 0;
+    public T getWeight() {
+        T weightBox = 0;
         if (fruitList.size() != 0) {
-            for (int i = 0; i < fruitList.size(); i++) {
-                weightBox = weightBox + i;
+            for (T fruit : getFruitList() ) {
+                weightBox += getFruitList(fruit);
             }
         }
         return weightBox;
     }
 
     public void showWeight(){
-        if ( getWeight() == 0 ) {
+         if ( getWeight() == 0 ) {
             System.out.println("Коробка пуста 👀");
         } else {
             System.out.println("Вес коробки - " + getWeight() + " кг.");

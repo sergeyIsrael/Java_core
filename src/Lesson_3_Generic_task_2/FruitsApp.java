@@ -114,5 +114,13 @@ orangesList3.add(orange4);
         orangeBox2.showWeight();
         System.out.println(orangesList2.size());
 
+        System.out.println();
+        orangeBox00.showWeight();
+        orangeBox1.showWeight();
+        orangeBox1.moveFruits(orangeBox00);
+        orangeBox1.showWeight();
+        orangeBox00.showWeight();
+
+
     }
 }
