@@ -121,6 +121,5 @@ orangesList3.add(orange4);
         orangeBox1.showWeight();
         orangeBox00.showWeight();
 
-
     }
 }

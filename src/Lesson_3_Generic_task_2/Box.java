@@ -36,12 +36,13 @@ public class Box<T extends Fruit> {
         for (T fruit : getFruitList()) {
             if (fruit != null) {
 //                код ниже берёт каждый фрукт не из листа в коробке, а из класса Фрукт.
-                double value = fruit.getWeightFruit();
-                weightBox = weightBox + value;
+//                Почему не можем взять из листа❓
+                weightBox = weightBox + fruit.getWeightFruit();
              }
         }
         return weightBox;
     }
+
 
     public void showWeight(){
          if ( getWeightBox() == 0 ) {
