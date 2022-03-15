@@ -99,6 +99,7 @@ orangesList3.add(orange4);
         System.out.println("- - - - - - - - - - -");
         System.out.println("Сравниваем appleBox1 и orangeBox1 👇");
         appleBox1.comparePrint(orangeBox1);
+        appleBox1.compareBool(orangeBox1);
         System.out.println("- - - - - - - - - - -");
 
 //        смотрим вес уже апельсинов

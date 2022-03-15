@@ -54,7 +54,7 @@ public class Box<T extends Fruit> {
 
 
     //сравниваем коробки
-    public boolean compareBool (Box<T> box) {
+    public boolean compareBool (Box<?> box) {
         return (this.getWeightBox() - box.getWeightBox()) == 0;
     }
 
