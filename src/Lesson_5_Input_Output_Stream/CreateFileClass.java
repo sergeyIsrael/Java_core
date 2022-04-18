@@ -75,7 +75,7 @@ public class CreateFileClass {
             String line = br.readLine();
 
             appData.setHeader(line.split(";")); // Здесь считали 1 линию, это Header.
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) { //  ❓ мы уже определили в стр 75 что line = br.readLine()
                 String[] values = line.split(";");
                 records.add(Arrays.asList(values));
             }
