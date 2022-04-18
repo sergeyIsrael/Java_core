@@ -15,7 +15,8 @@ public class CreateFileClass {
     public static final String pathToFile = "/Users/Mac/IdeaProjects/Java core/Java_core/src/resources/demo.csv";
 
 
-
+// ❓ - не понимаю что ложить в MAIN, а что нет
+//    -
 
     public static void main(String[] args) throws Exception {
 
@@ -67,11 +68,11 @@ public class CreateFileClass {
 
 
     //      2. Читаем с cvs файла в App Data
-    public static AppData readToAppData() throws Exception {
+    public static AppData readToAppData() throws IOException {
         AppData appData = new AppData();
         List<List<String>> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(pathToFile))) {
-            String line = br.readLine();
+            String line = br.readLine(); // ❓ мы здесь считали 1 линию или ещё нет?
 
             appData.setHeader(line.split(";"));
             while ((line = br.readLine()) != null) {
