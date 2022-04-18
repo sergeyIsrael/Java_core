@@ -5,12 +5,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class CreateFileClass {
-// от препода
-    public static ArrayList<FIleObject> fIleObjectArrayList = new ArrayList<>();
-    public static final String title = "value1"+ ";" + "value2"
-            + ";" + "value3" + ";"+ System.getProperty("line.separator");
+
+
 // мой путь к файлу
     public static final String pathToFile = "/Users/Mac/IdeaProjects/Java core/Java_core/src/resources/demo.csv";
 
@@ -27,44 +26,68 @@ public class CreateFileClass {
 
 
 //        нужно записать ЭТО в cvs (с ";")
-        String[] header = {"H1", "H2"};
-        int[][] data = {{1, 20},
-                {2, 22},
-                {3, 33}};
 
 
-//        ставим в header (;) semicolon
-        String headerStrSemicolon = "";
-        for (int i = 0; i < header.length; i++) {
-            headerStrSemicolon += header[i] + "; ";
+        Random random = new Random();
+        int length = random.nextInt(10);
+        String[] header = new String[length];
+        for (int i = 0; i < length; i++) {
+            header[i] = "H" + (i + 1);
         }
 
-//        ПЕЧАТЬ
-//        System.out.print("header: "); // header
-//        for (int i = 0; i < header.length; i++) {
-//            System.out.print(header[i] + " ");
-//        }
-//        System.out.println();
-//
-//        System.out.println("headerStrSemicolon: " + headerStrSemicolon);
+        int lengthRow = random.nextInt(10);
+        Integer[][] data = new Integer[length][lengthRow];
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j <lengthRow; j++) {
+                data[i][j] = random.nextInt(100);
+            }
+        }
+
+
 
 
 //       1. Пишем в cvs файл
+        write(data, header);
+
+        AppData appData1 = readToAppData();
+
+        printAppData(appData1);
+
+
+    } // main close
+
+    private static void printAppData(AppData appData1) {
+        for (int i = 0; i < appData1.getHeader().length; i++) {
+            System.out.print(appData1.getHeader()[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < appData1.getData().length; i++) {
+            for (int j = 0; j < appData1.getData()[i].length; j++) {
+                System.out.print(appData1.getData()[i][j] + " "); // убрать пробелы последние
+            }
+            System.out.println();
+        }
+    }
+
+    private static void write(Integer[][] data, String[] header) throws IOException {
+
+        //        ставим в header (;) semicolon
+        String headerStrSemicolon = "";
+        for (int i = 0; i < header.length; i++) {
+            headerStrSemicolon += header[i] + ";";
+        }
+
         try (FileWriter fileWriter = new FileWriter(pathToFile)) {
             fileWriter.write(headerStrSemicolon + "\n");     // пишем header
             for (int i = 0; i < data.length; i++) {   // пишем data
                 for (int j = 0; j < data[i].length; j++) {
-                    fileWriter.write(String.valueOf(data[i][j]) + "; "); // ❓ зачем нужно приводить к строке?
+                    fileWriter.write(data[i][j] + ";");
                 }
                 fileWriter.write(System.getProperty("line.separator"));
             }
         }
-
-        AppData appData = readToAppData();
-
-
-
-    } // main close
+    }
 
 
     //      2. Читаем с cvs файла в App Data
