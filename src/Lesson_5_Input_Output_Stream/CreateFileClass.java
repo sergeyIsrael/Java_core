@@ -72,9 +72,9 @@ public class CreateFileClass {
         AppData appData = new AppData();
         List<List<String>> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(pathToFile))) {
-            String line = br.readLine(); // ❓ мы здесь считали 1 линию или ещё нет?
+            String line = br.readLine();
 
-            appData.setHeader(line.split(";"));
+            appData.setHeader(line.split(";")); // Здесь считали 1 линию, это Header.
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(";");
                 records.add(Arrays.asList(values));
