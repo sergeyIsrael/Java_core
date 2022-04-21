@@ -5,50 +5,30 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class MainTraining {
 
 
         public static void main(String[] args) {
 
-                int[][] dataInt = {
-                        {1, 200, 300},
-                        {2, 222, 333} };
+                int[][] in = { {1,2,3,4},
+                               {2,3,6,5},
+                               {3,6,9,7} };
+//                System.out.println(in[0].length);
 
-                String dataStr = Arrays.deepToString(dataInt);
-                System.out.println(dataStr);
-                System.out.println(dataStr.split(";"));
-                
-                int[] dataInt1 = {1,4,4,5};
-                String dataStr1 = Arrays.toString(dataInt1);
-                System.out.println(dataStr1);
-                System.out.println(dataStr1.split(";"));
+                for (int i = 0; i < in.length; i++) {
+                        for (int j = 0; j < in[i].length; j++) {
+                                if (j == in[i].length-1 ) { // j max = 3; in[i].length = 4
+                                        System.out.print(in[i][j]);
+                                } else {
+                                        System.out.print(in[i][j] + ", ");
+                                }
 
-
-                File pathFileDemo = new File("demoL5.txt");
-        String javaStr = "Java999";
-        byte[] javaByte = javaStr.getBytes(StandardCharsets.UTF_8);
-//
-        try ( FileOutputStream outDemo = new FileOutputStream(pathFileDemo) ) {
-        outDemo.write(javaByte);
-        } catch (IOException e) {
-                e.printStackTrace();
-        }
-
-//        READ in byte array (like buffer)
-                byte[] buf = new byte[20];
-
-        try (FileInputStream inDemo = new FileInputStream(pathFileDemo) ) {
-                int count;
-                count = inDemo.read(buf);
-                while ((count = inDemo.read(buf)) != -1) {
-                        for (int i = 0; i < count; i++) {
-                                System.out.print((char) buf[i]);
                         }
+                        System.out.println();
                 }
-        } catch (IOException e) {
-                e.printStackTrace();
-          }
+
 
 
 
